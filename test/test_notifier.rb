@@ -83,7 +83,7 @@ class TestNotifier < Test::Unit::TestCase
       end
 
       should "use default_options" do
-        @notifier.default_options = {:foo => 'bar', 'short_message' => 'will be hidden by explicit argument', 'host' => 'some_host'}
+        @notifier.default_options = {'foo' => 'bar', 'short_message' => 'will be hidden by explicit argument', 'host' => 'some_host'}
         hash = @notifier.__send__(:extract_hash, { 'version' => '1.0', 'short_message' => 'message' })
         assert_equal 'bar', hash['foo']
         assert_equal 'message', hash['short_message']
