@@ -1,11 +1,12 @@
 require 'rubygems'
+require 'minitest/autorun'
 require 'test/unit'
 require 'shoulda'
-require 'mocha'
+require 'mocha/setup'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'gelf'
 
-class Test::Unit::TestCase
+class MiniTest::Unit::TestCase
 end

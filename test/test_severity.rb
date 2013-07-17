@@ -1,9 +1,11 @@
 require 'helper'
 
-class TestSeverity < Test::Unit::TestCase
-  should "map Ruby Logger levels to syslog levels as SyslogLogger" do
+class TestSeverity < MiniTest::Unit::TestCase
+
+  def test_maps_ruby_logger_levels_to_syslog_levels
     GELF::LOGGER_MAPPING.each do |ruby_level, syslog_level|
-      assert_not_equal syslog_level, ruby_level
+      refute_equal syslog_level, ruby_level
     end
   end
+
 end
