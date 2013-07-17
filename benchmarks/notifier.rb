@@ -1,17 +1,15 @@
 #! /usr/bin/env ruby
 
-puts "Loading..."
-
 require 'benchmark'
 require 'rubygems'
+require 'securerandom'
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'gelf'
 
 puts "Generating random data..."
-srand(1)
-RANDOM_DATA = ('A'..'z').to_a
-k3_message = (1..3*1024).map { RANDOM_DATA[rand(RANDOM_DATA.count)] }.join
+k3_message = SecureRandom.urlsafe_base64(3*1024)
 
 TARGET_HOST = 'localhost'
 TARGET_PORT = 12201
