@@ -4,3 +4,6 @@ rvm:
   - jruby-19mode
   - jruby-head
 
+matrix:
+  allow_failures:
+    - rvm: 2.0.0
