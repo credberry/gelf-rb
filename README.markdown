@@ -11,6 +11,8 @@ for documentation on this gem.
 Works with Ruby 1.9.3+ and JRuby 1.7+. Others Rubies are untested,
 but may work.
 
+[![Build Status](https://travis-ci.org/Marketcircle/gelf-rb.png?branch=master)](https://travis-ci.org/Marketcircle/gelf-rb)
+
 ## Note on Patches/Pull Requests
 
 * Fork the project.
