@@ -8,3 +8,5 @@ gem 'simplecov'
 gem 'simplecov-rcov'
 
 
+gem 'coveralls', require: false
+
