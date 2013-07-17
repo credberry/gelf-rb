@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'simplecov'
 require 'minitest/autorun'
 require 'test/unit'
 require 'shoulda'
