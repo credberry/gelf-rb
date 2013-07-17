@@ -1,9 +1,6 @@
 rvm:
-  - 1.8.7
-  - ree
-  - 1.9.2
   - 1.9.3
-  - jruby
+  - 2.0.0
+  - jruby-19mode
+  - jruby-head
 
-notifications:
-  irc: "irc.freenode.org#graylog2"
