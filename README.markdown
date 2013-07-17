@@ -12,6 +12,8 @@ Works with Ruby 1.9.3+ and JRuby 1.7+. Others Rubies are untested,
 but may work.
 
 [![Build Status](https://travis-ci.org/Marketcircle/gelf-rb.png?branch=master)](https://travis-ci.org/Marketcircle/gelf-rb)
+[![Coverage Status](https://coveralls.io/repos/Marketcircle/gelf-rb/badge.png)](https://coveralls.io/r/Marketcircle/gelf-rb)
+
 
 ## Note on Patches/Pull Requests
 
