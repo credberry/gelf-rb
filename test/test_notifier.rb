@@ -10,7 +10,7 @@ class TestNotifier < Test::Unit::TestCase
     assert_equal( { 'version' => '1.0', 'level' => GELF::UNKNOWN,
                     'host' => 'default_hostname', 'facility' => 'gelf-rb' },
                   n.default_options )
-    n.addresses, n.max_chunk_size, n.default_options = [['graylog2.org', 7777]], :lan, {:host => 'grayhost'}
+    n.addresses, n.max_chunk_size, n.default_options = [['graylog2.org', 7777]], :lan, {'host' => 'grayhost'}
     assert_equal [['graylog2.org', 7777]], n.addresses
     assert_equal 8154, n.max_chunk_size
     assert_equal({'host' => 'grayhost'}, n.default_options)
