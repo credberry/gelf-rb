@@ -17,6 +17,7 @@ GEM
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     multi_json (1.7.7)
+    rake (10.1.0)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -39,6 +40,7 @@ PLATFORMS
 DEPENDENCIES
   ci_reporter
   mocha
+  rake
   shoulda
   simplecov
   simplecov-rcov
