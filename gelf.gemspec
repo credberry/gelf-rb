@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = GELF::VERSION
 
   s.summary     = 'Library to send GELF messages to Graylog2 logging server'
-  s.description <<-EOS
+  s.description =<<-EOS
 Library to send GELF messages to Graylog2 logging server.
 Supports plain-text, GELF messages and exceptions.
   EOS
