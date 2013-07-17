@@ -22,7 +22,7 @@ Supports plain-text, GELF messages and exceptions.
     '.travis.yml',
     'CHANGELOG',
     'LICENSE',
-    'README.rdoc',
+    'README.markdown',
     'Rakefile',
     'benchmarks/notifier.rb',
     'lib/gelf.rb',
