@@ -2,6 +2,8 @@
  * remove checks for proper key types in GELF messages
  * check if messages should actually be logged earlier
  * removed Jeweler
+ * removed HopToad compatability
+ * removed support for Ruby 1.8
 
 1.3.2, 2011-12-02:
  * support for rubygems-test.
