@@ -119,11 +119,9 @@ module GELF
     end
 
     GELF::Levels.constants.each do |const|
-      class_eval <<-EOT, __FILE__, __LINE__ + 1
-        def #{const.downcase}(*args)                          # def debug(*args)
-          notify_with_level(GELF::#{const}, *args)            #   notify_with_level(GELF::DEBUG, *args)
-        end                                                   # end
-      EOT
+      define_method(const.downcase) do |*args|
+        notify_with_level(GELF.const_get(const), *args)
+      end
     end
 
   private
@@ -181,7 +179,7 @@ module GELF
     end
 
     def set_timestamp
-      @hash['timestamp'] = Time.now.utc.to_f if @hash['timestamp'].nil?
+      @hash['timestamp'] = Time.now.utc.to_f unless @hash['timestamp']
     end
 
     def check_presence_of_mandatory_attributes
@@ -213,8 +211,6 @@ module GELF
     end
 
     def serialize_hash
-      raise ArgumentError.new("Hash is empty.") if @hash.nil? || @hash.empty?
-
       @hash['level'] = @level_mapping[@hash['level']]
 
       Zlib::Deflate.deflate(@hash.to_json).bytes
