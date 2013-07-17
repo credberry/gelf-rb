@@ -156,7 +156,6 @@ module GELF
                      end
 
       @hash = default_options.merge(args.merge(primary_data))
-      convert_hoptoad_keys_to_graylog2
       set_file_and_line if @collect_file_and_line
       set_timestamp
       check_presence_of_mandatory_attributes
@@ -166,15 +165,6 @@ module GELF
     def self.extract_hash_from_exception(exception)
       bt = exception.backtrace || ["Backtrace is not available."]
       { 'short_message' => "#{exception.class}: #{exception.message}", 'full_message' => "Backtrace:\n" + bt.join("\n") }
-    end
-
-    # Converts Hoptoad-specific keys in +@hash+ to Graylog2-specific.
-    def convert_hoptoad_keys_to_graylog2
-      if @hash['short_message'].to_s.empty?
-        if @hash.has_key?('error_class') && @hash.has_key?('error_message')
-          @hash['short_message'] = @hash.delete('error_class') + ': ' + @hash.delete('error_message')
-        end
-      end
     end
 
     CALLER_REGEXP = /^(.*):(\d+).*/

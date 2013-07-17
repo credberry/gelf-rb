@@ -99,12 +99,6 @@ class TestNotifier < Test::Unit::TestCase
         assert_equal 'message', hash['short_message']
       end
 
-      should "be compatible with HoptoadNotifier" do
-        # https://github.com/thoughtbot/hoptoad_notifier/blob/master/README.rdoc, section Going beyond exceptions
-        hash = @notifier.__send__(:extract_hash, :error_class => 'Class', :error_message => 'Message')
-        assert_equal 'Class: Message', hash['short_message']
-      end
-
       should "set file and line" do
         line = __LINE__
         hash = @notifier.__send__(:extract_hash, { 'version' => '1.0', 'short_message' => 'message' })
