@@ -44,6 +44,7 @@ module GELF
     GELF::Levels.constants.each do |const|
       class_eval <<-EOT, __FILE__, __LINE__ + 1
         def #{const.downcase}(*args)                  # def debug(*args)
+          return if args.first.to_s == ''             #   return if args.first.to_s == ''
           args.unshift(yield) if block_given?         #   args.unshift(yield) if block_given?
           add(GELF::#{const}, *args)                  #   add(GELF::DEBUG, *args)
         end                                           # end
